@@ -1,23 +1,28 @@
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [customerName, setCustomerName] = useState("");
+  const [cutomerPassword, setCustomerPassword] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='App__form'>
+        <input 
+          type='text'
+          placeholder='Name'
+          value={customerName}
+          onChange={(e) => {setCustomerName(e.target.value)}}
+        />
+        <input
+          type='text'
+          placeholder='Password'
+          value={setCustomerPassword}
+          onChange={ (e) => {setCustomerPassword(e.target.value)}}
+        />
+        <button>Submit</button>
+      </div>
     </div>
   );
 }
